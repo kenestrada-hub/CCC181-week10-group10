@@ -1,0 +1,65 @@
+/* =======================================================================
+   MEMBER 2  |  nav.css  |  Navigation bar (Flexbox) + footer (CSS Grid)
+   Branch: feature/nav-<lastname>
+   -----------------------------------------------------------------------
+   MOBILE-FIRST RULES
+   1. Write the PHONE styles first, with NO media query.
+   2. Use min-width media queries ONLY. Never max-width.
+   3. Use rem or % (thin borders may use px).
+   4. Edit ONLY this file. Use the --variables from reset.css.
+   5. Do NOT set side padding or max-width here: .container (base.css) does it.
+   ======================================================================= */
+
+
+/* ---- 1. PHONE (no media query) ---------------------------------------
+   NAVBAR (Flexbox)
+   TODO .site-header          background var(--navy); color #fff
+   TODO .navbar               display: flex; flex-direction: column;
+                              top and bottom padding 0.5rem
+   TODO .navbar__brand        display: flex; align-items: center; min-height: 48px;
+                              side padding 1rem; 1.25rem bold gold text (var(--gold)),
+                              no underline
+   TODO .nav-list             display: flex; flex-direction: column;
+                              remove bullets (list-style: none), margin 0, padding 0
+   TODO .nav-list a           display: flex; align-items: center; min-height: 48px;
+                              side padding 1rem; white text, no underline;
+                              border-radius var(--radius)
+   TODO .nav-list a:hover AND .nav-list a:focus-visible
+                              background var(--navy-hover) and a visible outline
+                              (example: 2px solid var(--gold))
+
+   FOOTER (Grid)
+   TODO .site-footer          background var(--navy); color #fff; padding 1.5rem 0 1rem
+   TODO .footer-grid          display: grid; ONE column (1fr); gap 1.25rem
+   TODO .footer-title         gold text (var(--gold)); 1.125rem; margin 0 0 0.5rem
+   TODO .footer-links         remove bullets, margin 0, padding 0
+   TODO .footer-links a       display: flex; align-items: center; min-height: 48px;
+                              white text
+   TODO .footer-links a:hover AND :focus-visible   change the color (example: var(--gold))
+   TODO .footer-copy          margin-top 1rem; font-size 0.875rem
+   -------------------------------------------------------------------- */
+
+
+
+
+/* ---- 2. 768px and up (tablets) ---------------------------------------
+   TODO @media (min-width: 768px)
+        .navbar               flex-direction: row; justify-content: space-between;
+                              align-items: center   (brand LEFT, links RIGHT)
+        .nav-list             flex-direction: row; gap: 0.5rem   (links in ONE row)
+   -------------------------------------------------------------------- */
+
+
+
+
+/* ---- 3. 1024px and up (laptops) --------------------------------------
+   TODO @media (min-width: 1024px)
+        .footer-grid          THREE equal columns: repeat(3, 1fr); gap 2rem
+   -------------------------------------------------------------------- */
+
+
+
+
+/* ---- 4. 1280px and up ------------------------------------------------
+   Nothing new here: .container (Member 1) keeps the content centered.
+   -------------------------------------------------------------------- */

@@ -1,0 +1,61 @@
+/* =======================================================================
+   MEMBER 1  |  base.css  |  Base, container, page layout, brand panel (CSS Grid + rem)
+   Branch: feature/base-<lastname>
+   -----------------------------------------------------------------------
+   MOBILE-FIRST RULES
+   1. Write the PHONE styles first, with NO media query.
+   2. Use min-width media queries ONLY. Never max-width.
+   3. Use rem or % (thin borders may use px).
+   4. Edit ONLY this file. Use the --variables from reset.css.
+   ======================================================================= */
+
+
+/* ---- STEP 0 (in index.html, not here) --------------------------------
+   Do Experiment 0 first. Then add this line inside <head> of index.html:
+   <meta name="viewport" content="width=device-width, initial-scale=1" />
+   -------------------------------------------------------------------- */
+
+
+/* ---- 1. PHONE (no media query) ---------------------------------------
+   TODO .page                 min-height: 100vh; display: flex; flex-direction: column;
+   TODO .page > main          flex: 1;   (keeps the footer at the bottom)
+   TODO .container            width: 100%; side padding 1rem (padding-inline)
+   TODO .login-layout         display: grid; ONE column (1fr); gap 1.5rem;
+                              top and bottom padding 1.5rem
+   TODO .brand-panel          background var(--navy); color #fff; text centered;
+                              padding 1.5rem 1rem; border-radius var(--radius)
+   TODO .brand-panel__badge   small gold "pill": inline-block, background var(--gold),
+                              navy text, bold, 0.875rem, border-radius: 999px
+   TODO .brand-panel__title   font-size: 1.75rem
+   TODO .brand-panel__perks   display: none   (phones show only what matters most)
+   -------------------------------------------------------------------- */
+
+
+
+
+/* ---- 2. 768px and up (tablets) ---------------------------------------
+   TODO @media (min-width: 768px)
+        .container            wider side padding (2rem)
+        .brand-panel          more padding (2rem)
+   -------------------------------------------------------------------- */
+
+
+
+
+/* ---- 3. 1024px and up (laptops) --------------------------------------
+   TODO @media (min-width: 1024px)
+        .login-layout         TWO equal columns (brand panel | login card);
+                              align-items: center; gap 3rem; vertical padding 3rem
+        .brand-panel          text-align: left; padding 3rem
+        .brand-panel__title   font-size: 2.5rem
+        .brand-panel__perks   display: block (the extra list is ADDED back);
+                              margin-top 1.5rem; left padding 1.25rem
+   -------------------------------------------------------------------- */
+
+
+
+
+/* ---- 4. 1280px and up (desktops) -------------------------------------
+   TODO @media (min-width: 1280px)
+        .container            max-width: 1200px; centered (margin-inline: auto)
+   -------------------------------------------------------------------- */
