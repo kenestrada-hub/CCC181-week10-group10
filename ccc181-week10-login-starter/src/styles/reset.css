@@ -1,0 +1,36 @@
+/* GIVEN FILE: design tokens + a tiny reset. Do not edit.
+   Use the variables below in your own CSS file, e.g. color: var(--navy); */
+:root {
+  --navy: #1f1f6e;
+  --navy-hover: #3a3a9c;
+  --gold: #ffd700;
+  --ink: #1b1b2f;
+  --muted: #565675;
+  --surface: #ffffff;
+  --page: #f4f4fb;
+  --border: #9a9ac8;
+  --error: #b00020;
+  --success: #1b6e3c;
+  --radius: 0.5rem;
+  --font: system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  color: var(--ink);
+  background: var(--page);
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+}
