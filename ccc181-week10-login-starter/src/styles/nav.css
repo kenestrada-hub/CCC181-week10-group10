@@ -39,7 +39,94 @@
    TODO .footer-copy          margin-top 1rem; font-size 0.875rem
    -------------------------------------------------------------------- */
 
+.site-header {
+  background: var(--navy);
+  color: #fff;
+}
 
+.navbar {
+  display: flex;
+  flex-direction: column;
+  /* top and bottom only: .navbar is also a .container, which sets the side padding */
+  padding-block: 0.5rem;
+}
+
+.navbar__brand {
+  display: flex;
+  align-items: center;
+  min-height: 48px;
+  padding-inline: 1rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+}
+
+.nav-list {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-list a {
+  display: flex;
+  align-items: center;
+  min-height: 48px;
+  padding-inline: 1rem;
+  color: #fff;
+  text-decoration: none;
+  border-radius: var(--radius);
+}
+
+.nav-list a:hover,
+.nav-list a:focus-visible {
+  background: var(--navy-hover);
+  outline: 2px solid var(--gold);
+}
+
+.site-footer {
+  background: var(--navy);
+  color: #fff;
+  padding: 1.5rem 0 1rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+.footer-title {
+  margin: 0 0 0.5rem;
+  font-size: 1.125rem;
+  color: var(--gold);
+}
+
+.footer-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-links a {
+  display: flex;
+  align-items: center;
+  min-height: 48px;
+  color: #fff;
+}
+
+.footer-links a:hover,
+.footer-links a:focus-visible {
+  color: var(--gold);
+}
+
+.footer-copy {
+  /* margin-top only: .footer-copy is also a .container, which centers it with margin-inline */
+  margin-top: 1rem;
+  font-size: 0.875rem;
+}
 
 
 /* ---- 2. 768px and up (tablets) ---------------------------------------
