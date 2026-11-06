@@ -268,6 +268,24 @@
         .alt-actions          flex-direction: row   (two buttons SIDE BY SIDE)
    -------------------------------------------------------------------- */
 
+@media (min-width: 768px) {
+  .login-card {
+    max-width: 32rem;
+    margin-inline: auto;
+    padding: 2rem;
+  }
+
+  .form-options {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .alt-actions {
+    flex-direction: row;
+  }
+}
+
 
 
 
