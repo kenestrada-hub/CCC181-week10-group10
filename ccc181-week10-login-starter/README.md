@@ -32,7 +32,7 @@ npm run build        # must finish with no errors before you submit
 | Member | Name | GitHub username | CSS file | What I did |
 | --- | --- | --- | --- | --- |
 | 1 (leader) | | | `base.css` | |
-| 2 | | | `nav.css` | |
+| 2 | PapsiProne | pronehacker99 | `nav.css` | Navbar with Flexbox: brand on top and stacked 48px links on phones, brand left and links in one row from 768px. Footer with Grid: 1 column on phones, 3 equal columns from 1024px. Hover and focus-visible styles on every nav and footer link. My screenshots: `screenshots/pronehacker99/`. |
 | 3 | | | `form.css` | |
 
 ## Experiment 0: the page without the viewport tag
