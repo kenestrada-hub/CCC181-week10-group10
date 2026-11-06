@@ -33,7 +33,7 @@ npm run build        # must finish with no errors before you submit
 | --- | --- | --- | --- | --- |
 | 1 (leader) | | | `base.css` | |
 | 2 | PapsiProne | pronehacker99 | `nav.css` | Navbar with Flexbox: brand on top and stacked 48px links on phones, brand left and links in one row from 768px. Footer with Grid: 1 column on phones, 3 equal columns from 1024px. Hover and focus-visible styles on every nav and footer link. My screenshots: `screenshots/pronehacker99/`. |
-| 3 | | | `form.css` | |
+| 3 | Felmar Troy Magsayo | FelmarTroy | `form.css` | Wrote the mobile-first login-card styles in plain CSS: stacked 48px tap targets on phones, password row with Show button that never overflows at 360px, checkbox + link in a row from 768px, side-by-side alt buttons from 768px, larger card padding and title from 1024px. Every :hover paired with :focus-visible; all sizing in rem/%; px only for thin borders and 48px tap-target heights. Added `overflow-wrap: anywhere` on .form-success so a long email can't cause sideways scrolling. |
 
 ## Experiment 0: the page without the viewport tag
 
