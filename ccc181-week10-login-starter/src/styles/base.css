@@ -30,8 +30,53 @@
    TODO .brand-panel__perks   display: none   (phones show only what matters most)
    -------------------------------------------------------------------- */
 
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
 
+.page > main {
+  flex: 1;
+}
 
+.container {
+  width: 100%;
+  padding-inline: 1rem;
+}
+
+.login-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  padding-block: 1.5rem;
+}
+
+.brand-panel {
+  background: var(--navy);
+  color: #fff;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  border-radius: var(--radius);
+}
+
+.brand-panel__badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background: var(--gold);
+  color: var(--navy);
+  font-weight: 700;
+  font-size: 0.875rem;
+  border-radius: 100rem;
+}
+
+.brand-panel__title {
+  font-size: 1.75rem;
+}
+
+.brand-panel__perks {
+  display: none;
+}
 
 /* ---- 2. 768px and up (tablets) ---------------------------------------
    TODO @media (min-width: 768px)
