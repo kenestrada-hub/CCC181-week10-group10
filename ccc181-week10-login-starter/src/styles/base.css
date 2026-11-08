@@ -84,8 +84,15 @@
         .brand-panel          more padding (2rem)
    -------------------------------------------------------------------- */
 
+@media (min-width: 768px) {
+  .container {
+    padding-inline: 2rem;
+  }
 
-
+  .brand-panel {
+    padding: 2rem;
+  }
+}
 
 /* ---- 3. 1024px and up (laptops) --------------------------------------
    TODO @media (min-width: 1024px)
