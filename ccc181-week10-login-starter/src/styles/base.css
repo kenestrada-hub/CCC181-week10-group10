@@ -135,3 +135,10 @@
    TODO @media (min-width: 1280px)
         .container            max-width: 1200px; centered (margin-inline: auto)
    -------------------------------------------------------------------- */
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1200px;
+    margin-inline: auto;
+  }
+}
