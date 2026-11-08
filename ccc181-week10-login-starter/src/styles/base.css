@@ -107,6 +107,30 @@
 
 
 
+@media (min-width: 1024px) {
+  .login-layout {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 3rem;
+    padding-block: 3rem;
+  }
+
+  .brand-panel {
+    text-align: left;
+    padding: 3rem;
+  }
+
+  .brand-panel__title {
+    font-size: 2.5rem;
+  }
+
+  .brand-panel__perks {
+    display: block;
+    margin-top: 1.5rem;
+    padding-left: 1.25rem;
+  }
+}
+
 /* ---- 4. 1280px and up (desktops) -------------------------------------
    TODO @media (min-width: 1280px)
         .container            max-width: 1200px; centered (margin-inline: auto)
