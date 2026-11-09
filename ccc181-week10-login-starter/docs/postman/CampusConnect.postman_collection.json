@@ -1,0 +1,82 @@
+{
+  "info": {
+    "name": "CampusConnect API",
+    "description": "CCC181 Group 10 IT-3A. Seven required requests. Run in order; login saves a runtime token and the final request clears it. No saved real tokens. Use localhost:3000, with the API running.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [{ "key": "baseUrl", "value": "http://localhost:3000/api/v1", "type": "string" }],
+  "item": [
+    {
+      "name": "01 Health — 200",
+      "request": { "method": "GET", "url": "{{baseUrl}}/health" },
+      "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": [
+        "pm.test('Health returns 200 and exact JSON', () => { pm.response.to.have.status(200); pm.expect(pm.response.json()).to.eql({ status: 'ok' }); });"
+      ] } }]
+    },
+    {
+      "name": "02 Demo login — 200",
+      "request": {
+        "method": "POST", "url": "{{baseUrl}}/sessions",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{\n  \"email\": \"student@campusconnect.test\",\n  \"password\": \"Campus26\"\n}", "options": { "raw": { "language": "json" } } }
+      },
+      "event": [
+        { "listen": "prerequest", "script": { "type": "text/javascript", "exec": ["pm.collectionVariables.unset('token');"] } },
+        { "listen": "test", "script": { "type": "text/javascript", "exec": [
+          "pm.test('Demo login returns token and exact public user', () => { pm.response.to.have.status(200); const data = pm.response.json(); pm.expect(data.token).to.be.a('string').and.not.empty; pm.expect(data.user).to.eql({ id: 1, name: 'Demo Student', email: 'student@campusconnect.test' }); pm.expect(Object.keys(data).sort()).to.eql(['token', 'user']); pm.collectionVariables.set('token', data.token); if (pm.visualizer) pm.visualizer.set('<pre>{{body}}</pre>', { body: JSON.stringify({ ...data, token: '<redacted for screenshot>' }, null, 2) }); });"
+        ] } }
+      ]
+    },
+    {
+      "name": "03 Wrong password — 401",
+      "request": {
+        "method": "POST", "url": "{{baseUrl}}/sessions",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{\n  \"email\": \"student@campusconnect.test\",\n  \"password\": \"Wrong123\"\n}", "options": { "raw": { "language": "json" } } }
+      },
+      "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": [
+        "pm.test('Wrong password returns 401, never a token', () => { pm.response.to.have.status(401); pm.expect(pm.response.json()).to.eql({ error: 'Invalid email or password.' }); });"
+      ] } }]
+    },
+    {
+      "name": "04 Unknown email — 401",
+      "request": {
+        "method": "POST", "url": "{{baseUrl}}/sessions",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{\n  \"email\": \"unknown@campusconnect.test\",\n  \"password\": \"Campus26\"\n}", "options": { "raw": { "language": "json" } } }
+      },
+      "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": [
+        "pm.test('Unknown email returns the same 401 message', () => { pm.response.to.have.status(401); pm.expect(pm.response.json()).to.eql({ error: 'Invalid email or password.' }); });"
+      ] } }]
+    },
+    {
+      "name": "05 Empty credentials — 400",
+      "request": {
+        "method": "POST", "url": "{{baseUrl}}/sessions",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{}", "options": { "raw": { "language": "json" } } }
+      },
+      "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": [
+        "pm.test('Empty body returns 400', () => { pm.response.to.have.status(400); pm.expect(pm.response.json()).to.eql({ error: 'Email and password are required.' }); });"
+      ] } }]
+    },
+    {
+      "name": "06 Current user without token — 401",
+      "request": { "method": "GET", "url": "{{baseUrl}}/users/me", "auth": { "type": "noauth" } },
+      "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": [
+        "pm.test('Missing token returns 401', () => { pm.response.to.have.status(401); pm.expect(pm.response.json()).to.eql({ error: 'Not logged in.' }); });"
+      ] } }]
+    },
+    {
+      "name": "07 Current user with token — 200",
+      "request": {
+        "method": "GET", "url": "{{baseUrl}}/users/me",
+        "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }]
+      },
+      "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": [
+        "pm.test('Bearer token returns exact public user', () => { pm.response.to.have.status(200); pm.expect(pm.response.json()).to.eql({ id: 1, name: 'Demo Student', email: 'student@campusconnect.test' }); });",
+        "pm.collectionVariables.unset('token');"
+      ] } }]
+    }
+  ]
+}
