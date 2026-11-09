@@ -1,0 +1,61 @@
+/* Part 2 additions; preserve all Part 1 styles and class names. */
+.auth-message {
+  margin: 0 0 1rem;
+  padding: 0.75rem;
+  border: 1px solid var(--success);
+  border-radius: var(--radius);
+  color: var(--success);
+  overflow-wrap: anywhere;
+}
+
+.auth-message--error {
+  border-color: var(--error);
+  color: var(--error);
+}
+
+.auth-note {
+  margin: 0 0 1rem;
+  font-size: 0.875rem;
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
+
+.login-form + .auth-note {
+  margin-top: 1rem;
+}
+
+.auth-welcome {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.auth-email {
+  margin-block: 1rem;
+  overflow-wrap: anywhere;
+}
+
+.auth-welcome .btn {
+  min-height: 3rem;
+}
+
+.auth-welcome .login-card__title:focus {
+  outline: none;
+}
+
+.btn:disabled,
+.form-field input:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+
+@media (min-width: 768px) {
+  .auth-welcome {
+    padding: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .auth-welcome {
+    padding: 2.5rem;
+  }
+}

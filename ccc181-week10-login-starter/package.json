@@ -4,10 +4,13 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "predev": "node scripts/setup-env.mjs --quiet",
+    "dev": "vite --port 5173 --strictPort",
     "dev:phone": "vite --host",
     "build": "tsc --noEmit && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "setup": "node scripts/setup-env.mjs",
+    "test": "node --experimental-strip-types --test test/*.test.mjs && npm --prefix server test"
   },
   "dependencies": {
     "react": "^19.3.1",
