@@ -7,6 +7,7 @@ import './styles/reset.css'; // GIVEN: design tokens + reset (do not edit)
 import './styles/base.css'; //  Member 1
 import './styles/nav.css'; //   Member 2
 import './styles/form.css'; //  Member 3
+import './styles/auth.css'; // Part 2 states
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
